@@ -6,7 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-
+require("dotenv").config();
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -34,6 +34,9 @@ app.get('/', function(req,res){
 //   console.log("App listening on PORT " + PORT);
 // });
 
+//API Key
+// =============================================================
+var googleKey = require("./controllers/google_maps.js")
 // Routes
 // =============================================================
 //require("./routes/api-routes.js")(app);
