@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+
+<body>
+
+    <h1 id='dis'></h1>
+    <div class="form-group">
+        <label for="driveLength">drive length</label>
+        <input class="form-control" id="driveLength" type="number">
+    </div>
+    <div class="form-group">
+        <label for="driveTime">drive time</label>
+        <input class="form-control" id="driveTime" type="number">
+    </div>
+    <button class="btn btn-primary" id="sub" type="submit">Submit</button>
+
+    <div id="howFast"></div>
+
+    <form action="/action_page.php" method="get">
+        <input list="browsers" name="browser">
+        <datalist id="drivers">
+
+        </datalist>
+        <input type="submit">
+    </form>
+
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+</body>
+
+</html>
