@@ -1,0 +1,74 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    height: 100%;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    height: 100%;
+  }
+  to {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1s ease-in 100 forwards;
+  animation: fadeIn 1s ease-in 100 forwards;
+  opacity: 0;
+  height: 0px;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 1s ease-out 1 backwards;
+  animation: fadeOut 1s ease-out 1 backwards;
+}
+
+span.outTriggerEnc, span.outTriggerLit {
+  border-radius: 50%;
+}
+
+span.outTriggerEnc i, span.outTriggerLit i{
+  font-size: inherit;
+}
+
+div.columns.fadeTargetLit.hide {
+  display: none !important;
+}
+div.columns.fadeTargetEnc.hide {
+  display: none !important;
+}
+.is-paused {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
