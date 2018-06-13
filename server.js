@@ -44,7 +44,7 @@ require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
     //db.User.findAll().then(entries => {
@@ -54,8 +54,8 @@ db.sequelize.sync({ force: true }).then(function() {
       //console.log("ID 2", entries);
     //})
    // });
-  //  db.User.create({name: 'A Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: 30}).then(entry => {
-  //    console.log("Entered: ", entry)
-  //  })
+   db.User.create({name: 'P Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: "10"}).then(entry => {
+     console.log("Entered: ", entry)
+   })
   });
 });
