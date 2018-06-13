@@ -6,7 +6,7 @@
 // =============================================================
 var express = require("express");
 var bodyParser = require("body-parser");
-require("dotenv").config();
+//require("dotenv").config();
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static("public"));
 
-app.get('/', function(req,res){
+app.get('/', function (req, res) {
   //res.send('hello world');
-  res.sendFile('/Users/gibso/Desktop/NCGrandPrix/NC_GrandPrix/public/html/test.html')
+  res.sendFile(__dirname + '/public/html/index.html');
 })
 
 // app.listen(PORT, function() {
