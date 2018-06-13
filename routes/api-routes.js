@@ -14,15 +14,15 @@ module.exports = function(app) {
 
   // GET route for getting all of the posts
   app.get("/api/posts/", function(req, res) {
-    db.Post.findAll({})
-      .then(function(dbPost) {
+    db.User.findAll({})
+        .then(function(dbPost) {
         res.json(dbPost);
       });
   });
 
   // Get route for returning posts of a specific category
   app.get("/api/posts/category/:category", function(req, res) {
-    db.Post.findAll({
+    db.User.findAll({
       where: {
         category: req.params.category
       }
@@ -34,7 +34,7 @@ module.exports = function(app) {
 
   // Get route for retrieving a single post
   app.get("/api/posts/:id", function(req, res) {
-    db.Post.findOne({
+    db.User.findOne({
       where: {
         id: req.params.id
       }
@@ -47,7 +47,7 @@ module.exports = function(app) {
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     console.log(req.body);
-    db.Post.create({
+    db.User.create({
       title: req.body.title,
       body: req.body.body,
       category: req.body.category
@@ -59,7 +59,7 @@ module.exports = function(app) {
 
   // DELETE route for deleting posts
   app.delete("/api/posts/:id", function(req, res) {
-    db.Post.destroy({
+    db.User.destroy({
       where: {
         id: req.params.id
       }
@@ -71,7 +71,7 @@ module.exports = function(app) {
 
   // PUT route for updating posts
   app.put("/api/posts", function(req, res) {
-    db.Post.update(req.body,
+    db.User.update(req.body,
       {
         where: {
           id: req.body.id
