@@ -25,10 +25,10 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static("public"));
 
-app.get('/', function(req,res){
-  //res.send('hello world');
-  res.sendFile('/Users/gibso/Desktop/NCGrandPrix/NC_GrandPrix/public/html/test.html')
-})
+// app.get('/', function(req,res){
+//   //res.send('hello world');
+//   res.sendFile('/Users/gibso/Desktop/NCGrandPrix/NC_GrandPrix/public/html/test.html')
+// })
 
 // app.listen(PORT, function() {
 //   console.log("App listening on PORT " + PORT);
@@ -36,16 +36,26 @@ app.get('/', function(req,res){
 
 //API Key
 // =============================================================
-var googleKey = require("./controllers/google_maps.js")
+//var googleKey = require("./controllers/google_maps.js")
 // Routes
 // =============================================================
 //require("./routes/api-routes.js")(app);
-//require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // // =============================================================
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
+    //db.User.findAll().then(entries => {
+      //console.log("ENTRIES", entries[1].dataValues.endLoc);
+
+    //db.User.findOne({where: {startLoc:'here'}}).then(entries => {
+      //console.log("ID 2", entries);
+    //})
+   // });
+  //  db.User.create({name: 'A Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: 30}).then(entry => {
+  //    console.log("Entered: ", entry)
+  //  })
   });
 });
