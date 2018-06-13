@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="./assets/css/bulma.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
   <!-- <link rel="stylesheet" type="text/css" href="./fade.css"> -->
 </head>
 
@@ -24,13 +26,12 @@
           <a data-scroll href="#races" class="nav-item" alt="Link to race overview">Races</a>
           <a data-scroll href="#compare" class="nav-item" alt="Link to comparison overview">Compare</a>
           <span class="nav-item">
-            <a data-scroll href="#contact" class="button" alt="Link to contact form">Contact</a>
+            <a data-scroll href="#contact" class="nav-item" alt="Link to contact form">Contact</a>
           </span>
         </div>
       </header>
-
     </div>
-    <!-- LANDING CONTENT -->
+    <!-- HOME PAGE -->
     <div class="hero-body">
       <div class="container has-text-centered">
         <h1 class="landing title" style="margin-bottom: 4vh;">
@@ -44,29 +45,21 @@
       </div>
     </div>
   </section>
-  <!-- MISSION STATEMENT SECTION -->
+  <!-- ABOUT SECTION -->
   <section id="mission" class="is-large section content is-transparent" style="padding-top: 10%; padding-bottom: 10%;">
     <div class="container has-text-centered">
       <div class="columns" style="margin-bottom: 5vh;">
         <div class="column is-10 is-offset-1">
           <blockquote cite="" style="border-radius: 1%;">
-            <h1 class="title mission">
-              About this project
-            </h1>
+            <h1 class="title mission"> Wow I can't believe I'm that slow! </h1>
             <p class="is-pulled-right subtitle" style="margin-right: 5%;">
-              <em>--Team Name 2018
-              </em>
-            </p>
+               <em>--Raleigh,NC commuter 2018</em></p>
           </blockquote>
         </div>
       </div>
       <div class="columns">
         <div class="column is-10 is-offset-1">
-          <h4 class="subtitle mission">
-            Find out how your commute or track experience ranks amongst the pros,
-            <a data-scroll href="#contact" alt="Contact form" class="plain-link">get in touch</a> and
-            <em>try to improve your times</em>.
-          </h4>
+          <h4 class="subtitle mission is-5"> <em>This app aims to let users compare their daily commute routes against Formula 1 drivers. As a user start by choosing from a list of your favortite drivers to compare yourself to. Next, enter your route distance and the time it took to complete said route and hit submit. Check under results to see how you compare! Future additions will let users who enjoy to race compare their own track results against Formula 1 Drivers on courses with similar distance to their own</em>. </h4>
         </div>
       </div>
       <div class="columns" style="margin-top: 3vh;">
@@ -78,7 +71,7 @@
       </div>
     </div>
   </section>
-  <!-- Races OUTLINE -->
+  <!-- RACES SECTION -->
   <section class="section is-medium is-transparent" id="races">
     <div class="container">
       <div class="columns">
@@ -238,57 +231,126 @@
           </table>
         </div>
         <div class="column is-7">
-          <!-- TRACK -->
           <div class="box">
-            <div class="level">
-              <div class="level-item">
-                <div class="card is-shadowless">
-                  <div class="card-header is-shadowless">
-                    <div class="card-header-title is-centered">
-                      <p id="trackName">Track Name here</p>
+            <section class="hero">
+              <div class="hero-body">
+                <div class="container has-text-centered">
+                  <h1 class="title" id="trackName"> Track name here </h1>
+                  <div class="select is-fullwidth">
+                      <select name="track">
+                        <option>Choose a track</option>
+                        <option value="Australian Grand Prix">Australia Melbourne Grand Prix Circuit, Melbourne</option>
+                        <option value="Bahrain Grand Prix">Bahrain Bahrain International Circuit, Sakhir</option>
+                        <option value="Chinese Grand Prix">China Shanghai International Circuit, Shanghai</option>
+                        <option value="Azerbaijan Grand Prix">Azerbaijan Baku City Circuit, Baku</option>
+                        <option value="Spanish Grand Prix">Spain Circuit de Barcelona-Catalunya, Montmeló</option>
+                        <option value="Monaco Grand Prix">Monaco Circuit de Monaco, Monte Carlo</option>
+                        <option value="Canadian Grand Prix">Canada Circuit Gilles Villeneuve, Montreal</option>
+                      </select>
                     </div>
-                  </div>
-                  <div class="card-image">
-                    <figure class="images">
-                      <img src="./assets/img/aus.png" id="trackIMG" alt="F1 Track">
-                    </figure>
-                  </div>
                 </div>
               </div>
-              <div class="level-item">
-                <article class="media">
-                  <div class="media-content">
-                    <div class="content">
-                      <p>First Grand Prix:
-                        <p id="firstGP"></p>
-                      </p>
-                      <p>Number of Laps:
-                        <p id="totLaps"></p>
-                      </p>
-                      <p>Circuit Length:
-                        <p id="length"></p>
-                      </p>
-                      <p>Race Distance:
-                        <p id="distance"></p>
-                      </p>
-                      <p>Number of Corners:
-                        <p id="corners"></p>
-                      </p>
-                      <p>Lap Record:
-                        <p id="record"></p>
-                      </p>
+            </section>
+          </div>
+          <!-- TRACK -->
+          <figure class="images">
+            <img src="./assets/img/aus.png" id="trackIMG" alt="F1 Track" width="100%">
+          </figure>
+        </div>
+      </div>
+      <div class="columns" style="margin-top: 3vh;">
+        <div class="column is-2 is-offset-5 has-text-centered">
+          <a data-scroll href="#compare">
+            <button class="button is-medium">Compare</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- COMPARE SECTION -->
+  <section class="section is-medium is-transparent" id="compare">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-one-half">
+          <div class="box">
+            <p class="title has-text-centered">Your Data & Driver</p>
+            <hr>
+            <div class="content">
+              <div class="card-image">
+                <figure class="image is-3by2">
+                  <img src="https://bulma.io/images/placeholders/128x128.png" id="driver">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="field has-addons">
+                  <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                      <select name="drivers">
+                        <option value="Lewis Hamilton">Lewis Hamilton</option>
+                        <option value="Valtteri Bottas">Valtteri Bottas</option>
+                        <option value="Sebastian Vettel">Sebastian Vettel</option>
+                        <option value="Kimi Raikkonen">Kimi Raikkonen</option>
+                        <option value="Daniel Ricciardo">Daniel Ricciardo</option>
+                        <option value="Max Verstappen">Max Verstappen</option>
+                        <option value="Sergio Perez">Sergio Perez</option>
+                        <option value="Esteban Ocon">Esteban Ocon</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Lance Stroll">Lance Stroll</option>
+                        <option value="Sergey Sirotkin">Sergey Sirotkin</option>
+                        <option value="Nico Hulkenberg">Nico Hulkenberg</option>
+                        <option value="	Carlos Sainz Jr"> Carlos Sainz Jr</option>
+                        <option value="Pierre Gasly">Pierre Gasly</option>
+                        <option value="Brendon Hartley">Brendon Hartley</option>
+                        <option value="Romain Grosjean">Romain Grosjean</option>
+                        <option value="Kevin Magnussen">Kevin Magnussen</option>
+                        <option value="Stoffel Vandoorne">Stoffel Vandoorne</option>
+                        <option value="Fernando Alonso">Fernando Alonso</option>
+                        <option value="Marcus Ericsson">Marcus Ericsson</option>
+                        <option value="Charles Leclerc">Charles Leclerc</option>
+                      </select>
                     </div>
                   </div>
-                </article>
+                  <div class="control">
+                    <button type="submit" class="button is-primary">Choose</button>
+                  </div>
+                  <br>
+                </div>
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="e.g Alex Smith">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control">
+                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                  </div>
+                </div>
+                <div class="control"></div>
+                <div class="control">
+                  <button class="button is-primary">Submit</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
+        <div class="column is-one-half">
+          <div class="box">
+            <p class="title has-text-centered">Results</p>
+            <hr>
+            <div class="content">
+              <p class="title is-4">Here is how you compare against <span id="driver"></span> :</p>
+              <br>
+              <p class="title is-5"><span id="driver"></span> is too fast for you!</p>
+              <br>
+              <p class="title is-5">You are <span></span> times slower than <span id="driver"></span>.</p>
+              <br>
+              <p class="title is-5"></p>
+            </div>
+          </div>
+        </div>
       </div>
-
-
       <div class="columns" style="margin-top: 5vh;">
         <div class="column is-2 is-offset-5 has-text-centered">
           <a data-scroll href="#contact">
@@ -296,7 +358,6 @@
           </a>
         </div>
       </div>
-    </div>
   </section>
   <!-- CONTACT SECTION -->
   <section class="section footer is-large is-transparent" id="contact">
@@ -353,6 +414,9 @@
       </div>
     </div>
   </section>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
+  <script src="./assets/js/smooth-scroll.js"></script>
+
 
 
 </body>
