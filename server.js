@@ -27,7 +27,7 @@ app.use(express.static("public"));
 
 app.get('/', function (req, res) {
   //res.send('hello world');
-  res.sendFile(__dirname + '/public/html/index.html');
+  res.sendFile(__dirname + '/public/test.html');
 })
 
 // app.listen(PORT, function() {
@@ -39,12 +39,12 @@ app.get('/', function (req, res) {
 //var googleKey = require("./controllers/google_maps.js")
 // Routes
 // =============================================================
-//require("./routes/api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
     //db.User.findAll().then(entries => {
