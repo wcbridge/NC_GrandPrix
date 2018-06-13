@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "testuser",
-    "password": null,
-    "database": "form1_db",
+    "username": "root",
+    "password": "",
+    "database": "f1db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
