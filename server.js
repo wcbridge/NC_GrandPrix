@@ -30,9 +30,6 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/public/test.html');
 })
 
-// app.listen(PORT, function() {
-//   console.log("App listening on PORT " + PORT);
-// });
 
 //API Key
 // =============================================================
@@ -47,15 +44,6 @@ require("./routes/html-routes.js")(app);
 db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-    //db.User.findAll().then(entries => {
-      //console.log("ENTRIES", entries[1].dataValues.endLoc);
 
-    //db.User.findOne({where: {startLoc:'here'}}).then(entries => {
-      //console.log("ID 2", entries);
-    //})
-   // });
-  //  db.User.create({name: 'P Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: "10"}).then(entry => {
-  //    console.log("Entered: ", entry)
-  //  })
   });
 });
