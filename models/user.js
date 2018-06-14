@@ -8,11 +8,7 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             
         },
-        // createdAt:{
-        //     type: DataTypes.TIME,
-        //     defaultValue: DataTypes.NOW
-
-        // }
+      
     })
     return User;
 }
