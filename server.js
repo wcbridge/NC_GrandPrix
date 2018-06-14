@@ -54,8 +54,8 @@ db.sequelize.sync({ force: false }).then(function() {
       //console.log("ID 2", entries);
     //})
    // });
-   db.User.create({name: 'P Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: "10"}).then(entry => {
-     console.log("Entered: ", entry)
-   })
+  //  db.User.create({name: 'P Test. Name', DistanceOfRoute: 'Distance mi', TimeOfRoute: "10"}).then(entry => {
+  //    console.log("Entered: ", entry)
+  //  })
   });
 });

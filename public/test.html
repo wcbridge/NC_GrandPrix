@@ -9,6 +9,8 @@
   <link rel="stylesheet" type="text/css" href="./assets/css/bulma.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+
   <!-- <link rel="stylesheet" type="text/css" href="./fade.css"> -->
 </head>
 
@@ -53,13 +55,19 @@
           <blockquote cite="" style="border-radius: 1%;">
             <h1 class="title mission"> Wow I can't believe I'm that slow! </h1>
             <p class="is-pulled-right subtitle" style="margin-right: 5%;">
-               <em>--Raleigh,NC commuter 2018</em></p>
+              <em>--Raleigh,NC commuter 2018</em>
+            </p>
           </blockquote>
         </div>
       </div>
       <div class="columns">
         <div class="column is-10 is-offset-1">
-          <h4 class="subtitle mission is-5"> <em>This app aims to let users compare their daily commute routes against Formula 1 drivers. As a user start by choosing from a list of your favortite drivers to compare yourself to. Next, enter your route distance and the time it took to complete said route and hit submit. Check under results to see how you compare! Future additions will let users who enjoy to race compare their own track results against Formula 1 Drivers on courses with similar distance to their own</em>. </h4>
+          <h4 class="subtitle mission is-5">
+            <em>This app aims to let users compare their daily commute routes against Formula 1 drivers. As a user start by choosing
+              from a list of your favortite drivers to compare yourself to. Next, enter your route distance and the time
+              it took to complete said route and hit submit. Check under results to see how you compare! Future additions
+              will let users who enjoy to race compare their own track results against Formula 1 Drivers on courses with
+              similar distance to their own</em>. </h4>
         </div>
       </div>
       <div class="columns" style="margin-top: 3vh;">
@@ -237,17 +245,17 @@
                 <div class="container has-text-centered">
                   <h1 class="title" id="trackName"> Track name here </h1>
                   <div class="select is-fullwidth">
-                      <select name="track">
-                        <option>Choose a track</option>
-                        <option value="Australian Grand Prix">Australia Melbourne Grand Prix Circuit, Melbourne</option>
-                        <option value="Bahrain Grand Prix">Bahrain Bahrain International Circuit, Sakhir</option>
-                        <option value="Chinese Grand Prix">China Shanghai International Circuit, Shanghai</option>
-                        <option value="Azerbaijan Grand Prix">Azerbaijan Baku City Circuit, Baku</option>
-                        <option value="Spanish Grand Prix">Spain Circuit de Barcelona-Catalunya, Montmeló</option>
-                        <option value="Monaco Grand Prix">Monaco Circuit de Monaco, Monte Carlo</option>
-                        <option value="Canadian Grand Prix">Canada Circuit Gilles Villeneuve, Montreal</option>
-                      </select>
-                    </div>
+                    <select name="track">
+                      <option>Choose a track</option>
+                      <option value="Australian Grand Prix">Australia Melbourne Grand Prix Circuit, Melbourne</option>
+                      <option value="Bahrain Grand Prix">Bahrain Bahrain International Circuit, Sakhir</option>
+                      <option value="Chinese Grand Prix">China Shanghai International Circuit, Shanghai</option>
+                      <option value="Azerbaijan Grand Prix">Azerbaijan Baku City Circuit, Baku</option>
+                      <option value="Spanish Grand Prix">Spain Circuit de Barcelona-Catalunya, Montmeló</option>
+                      <option value="Monaco Grand Prix">Monaco Circuit de Monaco, Monte Carlo</option>
+                      <option value="Canadian Grand Prix">Canada Circuit Gilles Villeneuve, Montreal</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </section>
@@ -315,28 +323,33 @@
                   </div>
                   <br>
                 </div>
-                <div class="field">
-                  <label class="label">Name</label>
-                  <div class="control">
-                    <input class="input" type="text" placeholder="e.g Alex Smith">
+<!-- Added Form Tags and id attr to each Input -->
+                <form id="userInput">
+                  <div class="field">
+                    <label class="label">Name</label>
+                    <div class="control">
+                      <input class="input" id="nameInput" type="text" placeholder="e.g Alex Smith">
+                    </div>
                   </div>
-                </div>
-                <div class="field">
-                  <label class="label">How Many Miles Was Your Commute?</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="miles">
+                  <div class="field">
+                    <label class="label">How Many Miles Was Your Commute?</label>
+                    <div class="control">
+                      <input class="input" id="mileInput" type="text" placeholder="miles">
+                    </div>
                   </div>
-                </div>
-                <div class="field">
-                  <label class="label">How Many Minutes Did It Take?</label>
-                  <div class="control">
-                    <input class="input" type="email" placeholder="minutes">
+                  <div class="field">
+                    <label class="label">How Many Minutes Did It Take?</label>
+                    <div class="control">
+                      <input class="input" id="minuteInput" type="text" placeholder="minutes">
+                    </div>
                   </div>
-                </div>
-                <div class="control"></div>
-                <div class="control">
-                  <button class="button is-primary">Submit</button>
-                </div>
+                  <div class="control"></div>
+                  <div class="control">
+                    <button class="button is-primary">Submit</button>
+                  </div>
+                  </form>
+
+               
               </div>
             </div>
           </div>
@@ -346,11 +359,15 @@
             <p class="title has-text-centered">Results</p>
             <hr>
             <div class="content">
-              <p class="title is-4">Here is how you compare against <span id="driver"></span> :</p>
+              <p class="title is-4">Here is how you compare against
+                <span id="driver"></span> :</p>
               <br>
-              <p class="title is-5"><span id="driver"></span> is too fast for you!</p>
+              <p class="title is-5">
+                <span id="driver"></span> is too fast for you!</p>
               <br>
-              <p class="title is-5">You are <span></span> times slower than <span id="driver"></span>.</p>
+              <p class="title is-5">You are
+                <span></span> times slower than
+                <span id="driver"></span>.</p>
               <br>
               <p class="title is-5"></p>
             </div>
@@ -422,6 +439,7 @@
   </section>
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js"></script>
   <script src="./assets/js/smooth-scroll.js"></script>
+  <script src="./js/userInput.js"></script>
 
 
 
