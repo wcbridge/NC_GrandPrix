@@ -1,9 +1,0 @@
-
-Rou	
-1	Australian Grand Prix	Australia Melbourne Grand Prix Circuit, Melbourne	25 March
-2	Bahrain Grand Prix	Bahrain Bahrain International Circuit, Sakhir	        8 April
-3	Chinese Grand Prix	China Shanghai International Circuit, Shanghai	        15 April
-4	Azerbaijan Grand Prix	Azerbaijan Baku City Circuit, Baku	                29 April
-5	Spanish Grand Prix	Spain Circuit de Barcelona-Catalunya, Montmeló	        13 May
-6	Monaco Grand Prix	Monaco Circuit de Monaco, Monte Carlo	                27 May
-7	Canadian Grand Prix	Canada Circuit Gilles Villeneuve, Montreal	        10 June
