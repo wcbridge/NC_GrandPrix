@@ -1,9 +1,13 @@
 module.exports = function (sequelize, DataTypes) {
-    var Driver = sequelize.define("driver", {
+    var DriverInfo = sequelize.define("driverinfo", {
         // Giving the Author model a name of type STRING
-        driverId : DataTypes.STRING,
-        driverRef: DataTypes.STRING
-    });
+        driverName: DataTypes.STRING,
+        fastestLapTime: DataTypes.STRING,
+    },
+        {
+            timestamps: false
+
+        });
     // Driver.associate = function (models) {
     //     // Associating Author with Posts
     //     // When an Author is deleted, also delete any associated Posts
@@ -11,5 +15,15 @@ module.exports = function (sequelize, DataTypes) {
     //         onDelete: "cascade"
     //     });
     // };
-    return Driver;
+    return DriverInfo;
 };
+
+// dropdown name with id in DB;
+// send to GET req;
+// make compare req;
+// response is fastest lap;
+
+// post user table;
+
+// math function; 
+// user results;
