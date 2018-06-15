@@ -57,6 +57,17 @@ module.exports = function (app) {
       });
   });
 
+  //GET route for drivers
+
+  app.get("/api/drivers/", function (req, res){
+    db.DriverInfo.findAll({}).then( driver => {
+      res.json(driver)
+    })
+
+  })
+
+};
+
   //   // DELETE route for deleting posts
   //   app.delete("/api/posts/:id", function(req, res) {
   //     db.User.destroy({
@@ -81,4 +92,3 @@ module.exports = function (app) {
   //         res.json(dbPost);
   //       });
   //   });
-};
