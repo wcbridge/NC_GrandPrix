@@ -245,7 +245,7 @@
                 <div class="container has-text-centered">
                   <h1 class="title" id="trackName">  </h1>
                   <div class="select is-fullwidth">
-                    <select name="track">
+                    <select id="trackSelect" name="track">
                       <option>Choose a track</option>
                       <option value="1" selected>Australia Grand Prix</option>
                       <option value="2">Bahrain Bahrain International Circuit, Sakhir</option>
@@ -285,15 +285,15 @@
             <hr>
             <div class="content">
               <div class="card-image">
-                <figure class="image is-3by2">
-                  <img src="https://bulma.io/images/placeholders/128x128.png" id="driver">
+                <figure class="image is-3by3">
+                  <img src="" id="driverPic" alt="F1 Driver">
                 </figure>
               </div>
               <div class="card-content">
                 <div class="field has-addons">
                   <div class="control is-expanded">
                     <div class="select is-fullwidth">
-                      <select class="driverName" name="drivers">
+                      <select id="driverName" name="drivers">
                         <option id="1" value="Lewis Hamilton">Lewis Hamilton</option>
                         <option id="2" value="Nick Heifeld">Nick Heifeld</option>
                         <option id="3" value="Nico Rosberg">Nico Rosberg</option>
@@ -323,18 +323,18 @@
                   <div class="field">
                     <label class="label">How Many Miles Was Your Commute?</label>
                     <div class="control">
-                      <input class="input" id="mileInput" type="text" placeholder="miles">
+                      <input class="input" id="driveLength" type="number" placeholder="miles">
                     </div>
                   </div>
                   <div class="field">
                     <label class="label">How Many Minutes Did It Take?</label>
                     <div class="control">
-                      <input class="input" id="minuteInput" type="number" placeholder="minutes">
+                      <input class="input" id="driveTime" type="number" placeholder="minutes">
                     </div>
                   </div>
                   <div class="control"></div>
                   <div class="control">
-                    <button class="button is-primary">Submit</button>
+                    <button class="button is-primary" id="sub">Submit</button>
                   </div>
                   </form>
 
@@ -414,7 +414,7 @@
               <div class="column is-one-quarter is-offset-4">
                 <p class="control is-horizontal">
                   <button type="submit" value="Send" class="button is-fullwidth is-outlined is-medium">
-                    <span class="icon" >
+                    <span class="icon" style="">
                       <i class="fa fa-send"></i>
                     </span>
                   </button>

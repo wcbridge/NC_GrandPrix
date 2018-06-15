@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     var name = $("#nameInput");
-    var miles = $("#mileInput");
-    var minutes = $("#minuteInput");
+    var miles = $("#driveLength");
+    var minutes = $("#driveTime");
 
 
     $(userInput).on("submit", function submitUserInput(event) {
@@ -19,7 +19,7 @@ $(document).ready(function () {
             minutes: minutes.val()
         }
 
-        console.log("HTML sending to SERVER", newPost);
+        //console.log("HTML sending to SERVER", newPost);
 
         postUserInput(newPost);
     });
@@ -35,9 +35,31 @@ $(document).ready(function () {
         })
     }
 })
+//Driver Pic Load with Dropdown Selection
 
+$("#driverName").on("change", function () {
+    //pull from html
+    var id = $("#driverName option:selected").attr("id")
+    var name = $("#driverName option:selected").attr("value");
 
-$('select').on('change', function() {
+    console.log(id)
+    console.log(name)
+
+    //refers to img file to load pic
+    $("#driverPic").attr("src","./assets/img/"+ name +".jpg")
+
+    //sends to server
+    $.get("/api/drivers/" + id, function (data) {
+        if (data) {
+            console.log("DriverInfo Speed",data);
+            return data;
+        }
+        //add catch for error and validation
+    })
+})
+
+//Track Img and Table Data Fill
+$('#trackSelect').on('change', function() {
     // alert( this.value );
     var id = this.value;
 
@@ -153,4 +175,3 @@ $('select').on('change', function() {
       }
     });
   })
-

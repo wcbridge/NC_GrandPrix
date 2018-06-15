@@ -59,36 +59,21 @@ module.exports = function (app) {
 
   //GET route for drivers
 
-  app.get("/api/drivers/", function (req, res){
-    db.DriverInfo.findAll({}).then( driver => {
-      res.json(driver)
+  // app.get("/api/drivers/", function (req, res) {
+  //   db.DriverInfo.findAll({}).then(driver => {
+  //     res.json(driver)
+  //   })
+
+  // })
+
+  
+  //GET one driver's fastest lap time
+  app.get("/api/drivers/:id", function (req, res) {
+    db.DriverInfo.findOne({
+      where: { id: req.params.id }
+    }).then(oneDriver => {
+      res.json(oneDriver.fastestLapTime)
     })
-
+    
   })
-
 };
-
-  //   // DELETE route for deleting posts
-  //   app.delete("/api/posts/:id", function(req, res) {
-  //     db.User.destroy({
-  //       where: {
-  //         id: req.params.id
-  //       }
-  //     })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
-
-  //   // PUT route for updating posts
-  //   app.put("/api/posts", function(req, res) {
-  //     db.User.update(req.body,
-  //       {
-  //         where: {
-  //           id: req.body.id
-  //         }
-  //       })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
