@@ -15,13 +15,13 @@
 </head>
 
 <body class="is-bold">
-  <section class="hero is-light is-fullheight is-transparent section">
+  <section class="hero is-light is-fullheight is-transparent section home">
     <!-- NAV SECTION -->
     <div class="hero-head has-fixed-nav" style="position: relative;">
       <header class="nav is-fixed-top has-shadow container" style="background-image: linear-gradient(141deg, #dfd8d8 0%, whitesmoke 71%, white 1%)">
         <div class="nav-left">
           <a href="#" class="nav-item is-brand" alt="NCGP Logo ">
-            <img style="max-height: 32px;" src="" alt="NCGP logo" />
+            <img style="max-height: 32px;" src="./assets/img/logo.png" alt="NCGP logo" />
           </a>
         </div>
         <div class="nav-right">
@@ -40,9 +40,7 @@
           NC Grand Prix
         </h1>
         <h2 class="landing subtitle">
-          How do you compare
-          <strong>
-            <a data-scroll href="#mission" class="is-bold">against the pros</a>.</strong>
+          How do you compare <strong> against the pros.</strong>
         </h2>
       </div>
     </div>
@@ -72,9 +70,10 @@
       </div>
       <div class="columns" style="margin-top: 3vh;">
         <div class="column is-2 is-offset-5 has-text-centered">
-          <a data-scroll href="#races">
+            <hr>
+          <!-- <a data-scroll href="#races">
             <button class="button is-medium">Races</button>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -245,7 +244,7 @@
                 <div class="container has-text-centered">
                   <h1 class="title" id="trackName">  </h1>
                   <div class="select is-fullwidth">
-                    <select id="trackSelect" name="track">
+                    <select name="track">
                       <option>Choose a track</option>
                       <option value="1" selected>Australia Grand Prix</option>
                       <option value="2">Bahrain Bahrain International Circuit, Sakhir</option>
@@ -268,9 +267,10 @@
       </div>
       <div class="columns" style="margin-top: 3vh;">
         <div class="column is-2 is-offset-5 has-text-centered">
-          <a data-scroll href="#compare">
+            <hr>
+          <!-- <a data-scroll href="#compare">
             <button class="button is-medium">Compare</button>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -285,25 +285,36 @@
             <hr>
             <div class="content">
               <div class="card-image">
-                <figure class="image is-3by3">
-                  <img src="" id="driverPic" alt="F1 Driver">
+                <figure class="image is-3by2">
+                  <img src="https://bulma.io/images/placeholders/128x128.png" id="driver">
                 </figure>
               </div>
               <div class="card-content">
                 <div class="field has-addons">
                   <div class="control is-expanded">
                     <div class="select is-fullwidth">
-                      <select id="driverName" name="drivers">
-                        <option id="1" value="Lewis Hamilton">Lewis Hamilton</option>
-                        <option id="2" value="Nick Heifeld">Nick Heifeld</option>
-                        <option id="3" value="Nico Rosberg">Nico Rosberg</option>
-                        <option id="4" value="Fernando Alonso">Fernando Alonso</option>
-                        <option id="5" value="Heikki Kovalainen">Heikki Kovalainen</option>
-                        <option id="6" value="Kazuki Nakaiima">Kazuki Nakaiima</option>
-                        <option id="7" value="Sebastien Bourdais">Sebastien Bourdais</option>
-                        <option id="8" value="Kimi Raikkonen">Kimi Raikkonen</option>
-                        <option id="9" value="Robert Kubica">Robert Kubica</option>
-                        <option id="10" value="Timo Glock">Timo Glock</option>
+                      <select name="drivers">
+                        <option value="Lewis Hamilton">Lewis Hamilton</option>
+                        <option value="Valtteri Bottas">Valtteri Bottas</option>
+                        <option value="Sebastian Vettel">Sebastian Vettel</option>
+                        <option value="Kimi Raikkonen">Kimi Raikkonen</option>
+                        <option value="Daniel Ricciardo">Daniel Ricciardo</option>
+                        <option value="Max Verstappen">Max Verstappen</option>
+                        <option value="Sergio Perez">Sergio Perez</option>
+                        <option value="Esteban Ocon">Esteban Ocon</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Lance Stroll">Lance Stroll</option>
+                        <option value="Sergey Sirotkin">Sergey Sirotkin</option>
+                        <option value="Nico Hulkenberg">Nico Hulkenberg</option>
+                        <option value="	Carlos Sainz Jr"> Carlos Sainz Jr</option>
+                        <option value="Pierre Gasly">Pierre Gasly</option>
+                        <option value="Brendon Hartley">Brendon Hartley</option>
+                        <option value="Romain Grosjean">Romain Grosjean</option>
+                        <option value="Kevin Magnussen">Kevin Magnussen</option>
+                        <option value="Stoffel Vandoorne">Stoffel Vandoorne</option>
+                        <option value="Fernando Alonso">Fernando Alonso</option>
+                        <option value="Marcus Ericsson">Marcus Ericsson</option>
+                        <option value="Charles Leclerc">Charles Leclerc</option>
                       </select>
                     </div>
                   </div>
@@ -323,18 +334,18 @@
                   <div class="field">
                     <label class="label">How Many Miles Was Your Commute?</label>
                     <div class="control">
-                      <input class="input" id="driveLength" type="number" placeholder="miles">
+                      <input class="input" id="mileInput" type="text" placeholder="miles">
                     </div>
                   </div>
                   <div class="field">
                     <label class="label">How Many Minutes Did It Take?</label>
                     <div class="control">
-                      <input class="input" id="driveTime" type="number" placeholder="minutes">
+                      <input class="input" id="minuteInput" type="number" placeholder="minutes">
                     </div>
                   </div>
                   <div class="control"></div>
                   <div class="control">
-                    <button class="button is-primary" id="sub">Submit</button>
+                    <button class="button is-primary">Submit</button>
                   </div>
                   </form>
 
@@ -365,9 +376,10 @@
       </div>
       <div class="columns" style="margin-top: 5vh;">
         <div class="column is-2 is-offset-5 has-text-centered">
-          <a data-scroll href="#contact">
+          <hr>
+          <!-- <a data-scroll href="#contact">
             <button class="button is-medium">Get in touch</button>
-          </a>
+          </a> -->
         </div>
       </div>
   </section>
@@ -395,27 +407,19 @@
                 <label class="label">Details</label>
               </div>
               <div class="control">
-                <textarea name="message" class="textarea" placeholder="Organization name, location, scheduling and questions"></textarea>
+                <textarea name="message" class="textarea" placeholder="Feedback, Improvements, Say Hi!"></textarea>
               </div>
             </div>
             <input type="hidden" name="_next" value="/thanks.html" />
             <input type="hidden" name="_subject" value="NCGP Contact" />
             <div class="columns">
               <div class="column is-one-quarter is-offset-2">
-                <p>
-                  <a href="" style="border-bottom: none;">
-                    <i style="padding-left: 0.5em;" class="fa fa-3x fa-medium"></i>
-                  </a>
-                  <a href="" style="border-bottom: none;">
-                    <i style="padding-left: 0.5em;" class="fa fa-3x fa-twitter"></i>
-                  </a>
-                </p>
               </div>
               <div class="column is-one-quarter is-offset-4">
                 <p class="control is-horizontal">
                   <button type="submit" value="Send" class="button is-fullwidth is-outlined is-medium">
-                    <span class="icon" style="">
-                      <i class="fa fa-send"></i>
+                    <span class="icon">
+                      <i class="fas fa-envelope"></i>
                     </span>
                   </button>
                 </p>
