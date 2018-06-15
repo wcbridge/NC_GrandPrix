@@ -5268,6 +5268,10 @@ a.panel-block:hover {
   opacity: 0.9;
 }
 
+.home {
+  background: url("../img/BG.jpg");
+}
+
 .hero.is-black .tabs a:hover {
   opacity: 1;
 }
@@ -5315,7 +5319,7 @@ a.panel-block:hover {
 }
 
 .hero.is-light .title {
-  color: #363636;
+  color: #cccccc;
 }
 
 .hero.is-light .title a,
@@ -5324,12 +5328,12 @@ a.panel-block:hover {
 }
 
 .hero.is-light .subtitle {
-  color: rgba(54, 54, 54, 0.9);
+  color: #cccccc;
 }
 
 .hero.is-light .subtitle a,
 .hero.is-light .subtitle strong {
-  color: #363636;
+  color: #cccccc;
 }
 
 .hero.is-light .nav {
