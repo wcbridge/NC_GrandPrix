@@ -2,7 +2,7 @@
   "development": {
     "username": "testuser",
     "password": "",
-    "database": "form1_db",
+    "database": "f1db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

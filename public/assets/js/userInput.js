@@ -69,7 +69,7 @@ $(document).ready(function () {
                 let faster = driverMph / usermph
                 $(".driver").html("Here's how you compare against " +driver)
                 $("#driver").html(driver+" is too fast for you")
-                $("#avg").html("Your average speed was "+driverMph +".")
+                $("#avg").html("Your average speed was "+usermph +".")
                 $("#getThere").html(driver+ " would get there in "+ howFast+ " minutes")
                 $('#slower').html(driver + " Is " +faster+ "than you.")
                 console.log("driveLength", driveLength)
