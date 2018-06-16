@@ -12,10 +12,10 @@ $(document).ready(function () {
     //Driver Pic On Page Load
     $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
 
-    //Post User Input to Users Table
-    $("#userInput").on("click", function (event) {
+    $("#sub").on("click", function () {
+        //Post User Input to Users Table
+
         event.preventDefault();
-        console.log("clicked submit")
         // Wont submit the post if we are missing a body or a title
         if (
             !name.val().trim() || !miles.val().trim() || !minutes.val().trim()
@@ -31,24 +31,23 @@ $(document).ready(function () {
         console.log("HTML sending to SERVER", newPost);
 
         postUserInput(newPost);
-    });
-    function postUserInput(Post) {
-        $.ajax({
-            method: "POST",
-            url: "/api/user/post",
-            data: Post
-        }).then(entry => {
-            console.log("Finished Post ", entry)
 
-        })
-    }
 
-    $("#sub").on("click", function () {
-        event.preventDefault();
+        function postUserInput(Post) {
+            $.ajax({
+                method: "POST",
+                url: "/api/user/post",
+                data: Post
+            }).then(entry => {
+                console.log("Finished Post ", entry)
+            })
+        }
+
+        //Compare User Info to Driver Data
         let driveLength = $("#driveLength").val()
         let driveTime = $('#driveTime').val() / 60
         let usermph = driveLength / driveTime
-        let driverMph;
+        // let driverMph;
         // let howFast = driveLength / driverMph * 60
         // let faster = driverMph / usermph
         let driver = $("#driverName option:selected").attr("value")
