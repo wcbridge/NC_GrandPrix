@@ -28,6 +28,42 @@ $(document).ready(function () {
         postUserInput(newPost);
     });
 
+    $("#sub").on("click", function () {
+        event.preventDefault();
+        let driveLength = $("#driveLength").val()
+        let driveTime = $('#driveTime').val() / 60
+        let usermph = driveLength / driveTime
+        let driverMph;
+        // let howFast = driveLength / driverMph * 60
+        // let faster = driverMph / usermph
+        let driver = $("#driverName option:selected").attr("value")
+
+        $.get("/api/drivers/" + id, function (data) {
+
+            var driverMph = data;
+            console.log("data", data);
+            console.log("driverMph", driverMph)
+
+            if (usermph > driverMph) {
+                console.log("too fast to be true")
+                $('#howFast').append("I dont believe you're that fast")
+
+            } else {
+                console.log("normal loser speed")
+                let howFast = driveLength / driverMph * 60
+                let faster = driverMph / usermph
+                $(".driver").html(driver)
+                $("#getThere").html(howFast)
+                $('#slower').html(faster)
+                console.log("driveLength", driveLength)
+                console.log("driveTime", driveTime)
+                console.log("usermph", usermph)
+                console.log("driver", driver)
+                console.log("driverMph", driverMph)
+            }
+        })
+    });
+
     function postUserInput(Post) {
         $.ajax({
             method: "POST",
@@ -38,17 +74,21 @@ $(document).ready(function () {
 
         })
     }
-    //Driver Pic On Page Load
-    //refers to img file to load pic
-    $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
 
-    //sends to server
-    $.get("/api/drivers/1", function (data) {
-        if (data) {
-            console.log("DriverInfo Speed", data);
-            return data;
-        }
-    })
+    // //Driver Pic On Page Load
+    //     var id = 1
+       
+    //     //refers to img file to load pic
+    //     $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
+
+    //     //sends to server
+    //     $.get("/api/drivers/" + id, function (data) {
+    //         if (data) {
+    //             console.log("DriverInfo Speed", data);
+    //             return data;
+    //         }
+    //         //add catch for error and validation
+    //     })
 
     //Add f1 data On Page Load
     var id = 1;
@@ -189,7 +229,6 @@ function pickDriver() {
 function addF1Data() {
     //Track Img and Table Data Fill
     $('#trackSelect').on('change', function () {
-        // alert( this.value );
         var id = this.value;
 
         $.get("https://ergast.com/api/f1/2018/" + id + "/results.JSON", function (data) {
@@ -298,9 +337,6 @@ function addF1Data() {
                 $("#team20").text(data.MRData.RaceTable.Races["0"].Results["19"].Constructor.name);
                 $("#time20").text(data.MRData.RaceTable.Races["0"].Results["19"].Time.time);
                 $("#points20").text(data.MRData.RaceTable.Races["0"].Results["19"].points);
-
-
-
             }
         });
     })
