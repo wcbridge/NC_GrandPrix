@@ -52,9 +52,11 @@ $(document).ready(function () {
                 console.log("normal loser speed")
                 let howFast = driveLength / driverMph * 60
                 let faster = driverMph / usermph
-                $(".driver").html(driver)
-                $("#getThere").html(howFast)
-                $('#slower').html(faster)
+                $(".driver").html("Here's how you compare against " +driver)
+                $("#driver").html(driver+" is too fast for you")
+                $("#avg").html("Your average speed was "+driverMph +".")
+                $("#getThere").html(driver+ " would get there in "+ howFast+ " minutes")
+                $('#slower').html(driver + " Is " +faster+ "than you.")
                 console.log("driveLength", driveLength)
                 console.log("driveTime", driveTime)
                 console.log("usermph", usermph)
