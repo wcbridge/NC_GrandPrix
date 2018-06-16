@@ -28,6 +28,42 @@ $(document).ready(function () {
         postUserInput(newPost);
     });
 
+    $("#sub").on("click", function () {
+        event.preventDefault();
+        let driveLength = $("#driveLength").val()
+        let driveTime = $('#driveTime').val() / 60
+        let usermph = driveLength / driveTime
+        let driverMph;
+        // let howFast = driveLength / driverMph * 60
+        // let faster = driverMph / usermph
+        let driver = $("#driverName option:selected").attr("value")
+
+        $.get("/api/drivers/" + id, function (data) {
+
+            var driverMph = data;
+            console.log("data", data);
+            console.log("driverMph", driverMph)
+
+            if (usermph > driverMph) {
+                console.log("too fast to be true")
+                $('#howFast').append("I dont believe you're that fast")
+
+            } else {
+                console.log("normal loser speed")
+                let howFast = driveLength / driverMph * 60
+                let faster = driverMph / usermph
+                $(".driver").html(driver)
+                $("#getThere").html(howFast)
+                $('#slower').html(faster)
+                console.log("driveLength", driveLength)
+                console.log("driveTime", driveTime)
+                console.log("usermph", usermph)
+                console.log("driver", driver)
+                console.log("driverMph", driverMph)
+            }
+        })
+    });
+
     function postUserInput(Post) {
         $.ajax({
             method: "POST",
@@ -193,7 +229,6 @@ function pickDriver() {
 function addF1Data() {
     //Track Img and Table Data Fill
     $('#trackSelect').on('change', function () {
-        alert( this.value );
         var id = this.value;
 
         $.get("https://ergast.com/api/f1/2018/" + id + "/results.JSON", function (data) {
