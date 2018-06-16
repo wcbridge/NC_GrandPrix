@@ -76,19 +76,18 @@ $(document).ready(function () {
     }
 
     // //Driver Pic On Page Load
-    //     var id = 1
+        var id = 1
        
-    //     //refers to img file to load pic
-    //     $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
+        //refers to img file to load pic
+        $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
 
-    //     //sends to server
-    //     $.get("/api/drivers/" + id, function (data) {
-    //         if (data) {
-    //             console.log("DriverInfo Speed", data);
-    //             return data;
-    //         }
-    //         //add catch for error and validation
-    //     })
+        //sends to server
+        $.get("/api/drivers/" + id, function (data) {
+            if (data) {
+                console.log("DriverInfo Speed", data);
+                return data;
+            }
+        })
 
     //Add f1 data On Page Load
     var id = 1;
