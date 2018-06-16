@@ -39,20 +39,20 @@ $(document).ready(function () {
         })
     }
 
-    //Driver Pic On Page Load
-        var id = 1
+    // //Driver Pic On Page Load
+    //     var id = 1
        
-        //refers to img file to load pic
-        $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
+    //     //refers to img file to load pic
+    //     $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
 
-        //sends to server
-        $.get("/api/drivers/" + id, function (data) {
-            if (data) {
-                console.log("DriverInfo Speed", data);
-                return data;
-            }
-            //add catch for error and validation
-        })
+    //     //sends to server
+    //     $.get("/api/drivers/" + id, function (data) {
+    //         if (data) {
+    //             console.log("DriverInfo Speed", data);
+    //             return data;
+    //         }
+    //         //add catch for error and validation
+    //     })
 
     //Add f1 data On Page Load
     var id = 1;
@@ -193,7 +193,7 @@ function pickDriver() {
 function addF1Data() {
     //Track Img and Table Data Fill
     $('#trackSelect').on('change', function () {
-        // alert( this.value );
+        alert( this.value );
         var id = this.value;
 
         $.get("https://ergast.com/api/f1/2018/" + id + "/results.JSON", function (data) {
@@ -302,9 +302,6 @@ function addF1Data() {
                 $("#team20").text(data.MRData.RaceTable.Races["0"].Results["19"].Constructor.name);
                 $("#time20").text(data.MRData.RaceTable.Races["0"].Results["19"].Time.time);
                 $("#points20").text(data.MRData.RaceTable.Races["0"].Results["19"].points);
-
-
-
             }
         });
     })
