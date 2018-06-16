@@ -9,8 +9,13 @@ $(document).ready(function () {
     var minutes = $("#driveTime");
 
 
-    $(userInput).on("submit", function submitUserInput(event) {
+    //Driver Pic On Page Load
+    $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
+
+    //Post User Input to Users Table
+    $("#userInput").on("click", function (event) {
         event.preventDefault();
+        console.log("clicked submit")
         // Wont submit the post if we are missing a body or a title
         if (
             !name.val().trim() || !miles.val().trim() || !minutes.val().trim()
@@ -23,10 +28,20 @@ $(document).ready(function () {
             minutes: minutes.val()
         }
 
-        //console.log("HTML sending to SERVER", newPost);
+        console.log("HTML sending to SERVER", newPost);
 
         postUserInput(newPost);
     });
+    function postUserInput(Post) {
+        $.ajax({
+            method: "POST",
+            url: "/api/user/post",
+            data: Post
+        }).then(entry => {
+            console.log("Finished Post ", entry)
+
+        })
+    }
 
     $("#sub").on("click", function () {
         event.preventDefault();
@@ -63,31 +78,6 @@ $(document).ready(function () {
             }
         })
     });
-
-    function postUserInput(Post) {
-        $.ajax({
-            method: "POST",
-            url: "/api/user/post",
-            data: Post
-        }).then(entry => {
-            console.log("Finished Post ", entry)
-
-        })
-    }
-
-    // //Driver Pic On Page Load
-        var id = 1
-       
-        //refers to img file to load pic
-        $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
-
-        //sends to server
-        $.get("/api/drivers/" + id, function (data) {
-            if (data) {
-                console.log("DriverInfo Speed", data);
-                return data;
-            }
-        })
 
     //Add f1 data On Page Load
     var id = 1;
@@ -215,13 +205,12 @@ function pickDriver() {
         $("#driverPic").attr("src", "./assets/img/" + name + ".jpg")
 
         //sends to server
-        $.get("/api/drivers/" + id, function (data) {
-            if (data) {
-                console.log("DriverInfo Speed", data);
-                return data;
-            }
-            //add catch for error and validation
-        })
+        // $.get("/api/drivers/" + id, function (data) {
+        //     if (data) {
+        //         console.log("DriverInfo Speed", data);
+        //         return data;
+        //     }
+        //})
     })
 }
 

@@ -46,7 +46,7 @@ module.exports = function (app) {
 
   //   // POST route for saving a new post
   app.post("/api/user/post", function (req, res) {
-    // console.log("userInput",req.body, req.body.name, req.body.miles, req.body.minutes);
+    console.log("userInput",req.body, req.body.name, req.body.miles, req.body.minutes);
     db.User.create({
       name: req.body.name,
       DistanceOfRoute: req.body.miles,
