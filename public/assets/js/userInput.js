@@ -38,41 +38,6 @@ $(document).ready(function () {
 
         })
     }
-    //Calc Function for User Input
-    $("#sub").on("click", function () {
-        event.preventDefault();
-        let driveLength = $("#driveLength").val()
-        let driveTime = $('#driveTime').val() / 60
-        let usermph = driveLength / driveTime
-        let driverMph;
-        let howFast = driveLength / driverMph * 60
-        let faster = driverMph / usermph
-        let driver = $("#driverName option:selected").attr("value")
-
-        $.get("/api/drivers/" + id, function (data) {
-           
-            driverMph = data;
-            console.log("data", data);
-            console.log("driverMph", driverMph)
-           
-            if (usermph > driverMph) {
-                console.log("too fast to be true")
-                $('#howFast').append("I dont believe you're that fast")
-
-            } else {
-                console.log("normal loser speed")
-                $(".driver").html(driver)
-                $("#getThere").html(howFast)
-                $('#slower').html(faster)
-                console.log("driveLength", driveLength)
-                console.log("driveTime", driveTime)
-                console.log("usermph", usermph)
-                console.log("driver", driver)
-                console.log("driverMph", driverMph)
-            }
-        })
-    });
-
     //Driver Pic On Page Load
     //refers to img file to load pic
     $("#driverPic").attr("src", "./assets/img/Lewis Hamilton.jpg")
