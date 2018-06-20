@@ -12,10 +12,7 @@ module.exports = function (sequelize, DataTypes) {
         {
             timestamps:false
     })
-    //Association to Driver Model
-    // User.associate = function (models) {
-    //     User.belongsTo(models.DriverInfo)
-    // }
+    
     return User;
 }
 

@@ -46,7 +46,7 @@ module.exports = function (app) {
 
   //   // POST route for saving a new post
   app.post("/api/user/post", function (req, res) {
-    // console.log("userInput",req.body, req.body.name, req.body.miles, req.body.minutes);
+    console.log("userInput",req.body, req.body.name, req.body.miles, req.body.minutes);
     db.User.create({
       name: req.body.name,
       DistanceOfRoute: req.body.miles,
@@ -57,28 +57,23 @@ module.exports = function (app) {
       });
   });
 
-  //   // DELETE route for deleting posts
-  //   app.delete("/api/posts/:id", function(req, res) {
-  //     db.User.destroy({
-  //       where: {
-  //         id: req.params.id
-  //       }
-  //     })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
+  //GET route for drivers
 
-  //   // PUT route for updating posts
-  //   app.put("/api/posts", function(req, res) {
-  //     db.User.update(req.body,
-  //       {
-  //         where: {
-  //           id: req.body.id
-  //         }
-  //       })
-  //       .then(function(dbPost) {
-  //         res.json(dbPost);
-  //       });
-  //   });
+  // app.get("/api/drivers/", function (req, res) {
+  //   db.DriverInfo.findAll({}).then(driver => {
+  //     res.json(driver)
+  //   })
+
+  // })
+
+  
+  //GET one driver's fastest lap time
+  app.get("/api/drivers/:id", function (req, res) {
+    db.DriverInfo.findOne({
+      where: { id: req.params.id }
+    }).then(oneDriver => {
+      res.json(oneDriver.fastestLapTime)
+    })
+    
+  })
 };
